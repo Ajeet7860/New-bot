@@ -1,0 +1,27 @@
+{
+  "name": "new-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "High-quality, always-on Discord music bot with autoplay",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js && node --check src/bot.js && node --check src/commands.js && node --check src/config.js && node --check src/settings-store.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "esbuild": "0.28.2",
+    "file-type": "22.1.0"
+  },
+  "dependencies": {
+    "@discord-player/extractor": "7.2.0",
+    "discord-player": "7.2.0",
+    "discord.js": "14.27.0",
+    "dotenv": "17.4.2",
+    "mediaplex": "1.0.0"
+  }
+}

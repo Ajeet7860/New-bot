@@ -1,0 +1,14 @@
+services:
+  music-bot:
+    build: .
+    restart: unless-stopped
+    environment:
+      DATA_FILE: /app/data/guilds.json
+      DEFAULT_VOLUME: ${DEFAULT_VOLUME:-80}
+      DEV_GUILD_ID: ${DEV_GUILD_ID:-}
+      DISCORD_TOKEN: ${DISCORD_TOKEN:?Set DISCORD_TOKEN in .env}
+    volumes:
+      - music-bot-data:/app/data
+
+volumes:
+  music-bot-data:
